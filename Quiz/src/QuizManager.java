@@ -37,46 +37,81 @@ public class QuizManager {
             int selection = scan.nextInt();
             scan.nextLine();
 
-            while(IsRunning){
-                switch (selection) {
-                case 1:
-                    pop.populate(QuestionsList, selection);
+            
+            switch (selection) {
+            case 1:
+               pop.populateAlgo1(QuestionsList, selection);
+
+                String input;
+                int correctCount = 0;
+
+                System.out.println("*********************************************************");
+                System.out.println("Remember!!! Correct spelling and full answeres matter!");
+
+                for(int i = 0; i < 10; i++){
+                        
+                    System.out.println(QuestionsList.get(i)[0]);
+                    System.out.print("Please type your answer here: ");
+                    input = scan.nextLine();
+                        
+                    if (QuestionsList.get(i)[1].equalsIgnoreCase(input)){
+                        System.out.println("Well done!");
+                        correctCount++;
+                        } else {
+                        System.out.println("Incorrect. The correct answer was: " + QuestionsList.get(i)[1]);
+                    }
+                }
+
+                System.out.println("This quiz has ended! In total you got: " + correctCount + " correct!");
+                System.out.println("*********************************************************");
+                System.out.println("****** Would you like to go back to the main menu?*******");
+                System.out.println("*********************************************************");
+                System.out.println("");
+                System.out.print("Answer here!: (y\n): ");
+                input = scan.nextLine();
+
+                if(input.equalsIgnoreCase("y")){
+                    // reload main menu here, so create a another class that holds main menu logic since then the player can return anytime if they want to stop mid topic or smth
+                } else {
+                    System.out.println("Goodbye!");
+                    System.exit(0); 
+                }
                 break;
 
                 case 2:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 3:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 4:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 5:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 6:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 7:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 8:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 9:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
 
                 case 10:
-                    pop.populate(QuestionsList, selection);
+                    //pop.populate(QuestionsList, selection);
                 break;
         
                 default:
@@ -84,7 +119,7 @@ public class QuizManager {
                 break;
                 }
             }
-        }
+        
 
         if(MenuSelection == 1){
             // New class, populate random array list, will use populate array list but random number or do it a more hardcoded way
