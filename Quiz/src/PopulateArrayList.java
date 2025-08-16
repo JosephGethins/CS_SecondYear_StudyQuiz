@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class PopulateArrayList {
-    public void populate(ArrayList<String[]> list) {
+    public void populate(ArrayList<String[]> list, int selection) {
         list.add(new String[]{"What year did WW1 end?", "1918"});
         list.add(new String[]{"Who discovered penicillin?", "alexander fleming"});
         list.add(new String[]{"What year did the Berlin Wall fall?", "1989"});
