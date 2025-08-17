@@ -19,9 +19,7 @@ public class PlayerAnswerQuiz{
         case 1:
             pop.populateAlgo1(QuestionsList);
 
-            System.out.println("*********************************************************");
-            System.out.println("Remember!!! Correct spelling and full answers matter!");
-            System.out.println("*********************************************************");
+            QuizMenu.warnQuiz(correctCount);
 
             for(int i = 0; i < 10; i++){
                 System.out.println(QuestionsList.get(i)[0]);
@@ -41,9 +39,7 @@ public class PlayerAnswerQuiz{
         case 2:
             pop.populateAlgo1(QuestionsList);
 
-            System.out.println("*********************************************************");
-            System.out.println("Remember!!! Correct spelling and full answers matter!");
-            System.out.println("*********************************************************");
+            QuizMenu.warnQuiz(correctCount);
 
             for(int i = 0; i < 10; i++){
                 System.out.println(QuestionsList.get(i)[0]);

@@ -37,5 +37,12 @@ public class QuizMenu{
             System.exit(0); 
         }
     }
+
+    public void warnQuiz(int correctCount){
+        System.out.println("*********************************************************");
+        System.out.println("Remember!!! Correct spelling and full answers matter!");
+        System.out.println("*********************************************************");
+    }
+
 }
 
