@@ -16,6 +16,7 @@ public class PlayerAnswerQuiz{
 
         switch (selection) {
         case 1:
+            QuestionsList.clear(); // making sure its emptied so no old questions from diff topics
             pop.populateAlgo1(QuestionsList);
 
             QuizLogic.warnQuiz();
@@ -26,6 +27,7 @@ public class PlayerAnswerQuiz{
         break;
 
         case 2:
+            QuestionsList.clear();
             pop.populateAlgo2(QuestionsList);
 
             QuizLogic.warnQuiz();
@@ -36,6 +38,7 @@ public class PlayerAnswerQuiz{
         break;
 
         case 3:
+            QuestionsList.clear();  
             pop.populateDb(QuestionsList);
 
             QuizLogic.warnQuiz();
@@ -46,31 +49,80 @@ public class PlayerAnswerQuiz{
         break;
 
         case 4:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateCompArch(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 5:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateWebInfoProcessing(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 6:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateOS(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 7:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateSoftTest(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 8:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateUXUI(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 9:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateSoftEngProcess(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 10:
-            //pop.populate(QuestionsList, selection);
+            QuestionsList.clear();
+            pop.populateTheoryOfComp(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
         
         default:

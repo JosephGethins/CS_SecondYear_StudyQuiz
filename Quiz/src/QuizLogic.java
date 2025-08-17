@@ -40,7 +40,8 @@ public class QuizLogic{
 
     public void warnQuiz(){
         System.out.println("*********************************************************");
-        System.out.println("Remember!!! Correct spelling and full answers matter!");
+        System.out.println("* Remember!!! Correct spelling and full answers matter! *");
+        System.out.println("******* and n squared can be entered as n^2! ************");
         System.out.println("*********************************************************");
     }
 

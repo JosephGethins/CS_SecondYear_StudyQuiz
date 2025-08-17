@@ -14,11 +14,11 @@ public class QuizManager {
         ArrayList<String[]> QuestionsList = new ArrayList<>();
         PlayerAnswerQuiz playerChoice = new PlayerAnswerQuiz();
 
-        System.out.println("*********************************************************");
+        System.out.println("----------------------------------------------------------------");
         System.out.println("Welcome to the Computer Science Maynooth second year study quiz!");
-        System.out.println("Press 1 to start the basic quiz by topic");
-        System.out.println("Press 2 to begin the random quiz game (More Challenging)");
-        System.out.println("*********************************************************");
+        System.out.println("********* Press 1 to start the basic quiz by topic *************");
+        System.out.println("*** Press 2 to begin the random quiz game (More Challenging) ***");
+        System.out.println("----------------------------------------------------------------");
 
         int MenuSelection = scan.nextInt();
         scan.nextLine();
