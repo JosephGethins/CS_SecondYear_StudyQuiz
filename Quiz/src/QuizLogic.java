@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class QuizMenu{
+public class QuizLogic{
     Scanner scan = new Scanner(System.in);
     QuizManager quizManage = new QuizManager();
 
@@ -38,11 +38,29 @@ public class QuizMenu{
         }
     }
 
-    public void warnQuiz(int correctCount){
+    public void warnQuiz(){
         System.out.println("*********************************************************");
         System.out.println("Remember!!! Correct spelling and full answers matter!");
         System.out.println("*********************************************************");
     }
 
+    public int playerAnswer(ArrayList<String[]> QuestionsList){
+        int correctCount = 0;
+        String input = "";
+
+        for(int i = 0; i < 10; i++){
+            System.out.println(QuestionsList.get(i)[0]);
+            System.out.print("Please type your answer here: ");
+            input = scan.nextLine();
+                        
+            if (QuestionsList.get(i)[1].equalsIgnoreCase(input)){
+            System.out.println("********************* Well done! ************************");
+                correctCount++;
+            } else {
+            System.out.println("******** Incorrect. The correct answer was: " + QuestionsList.get(i)[1] + "*********");
+            }
+        }
+        return correctCount;
+    }
 }
 

@@ -29,7 +29,7 @@ public class PopulateArrayList {
 
         Collections.shuffle(list); // random order everytime otherwise its just bluriting out the exact same order 
     }
-    public void populateAlgo2(ArrayList<String[]> list, int selection) {
+    public void populateAlgo2(ArrayList<String[]> list) {
 
         list.clear();
 
@@ -57,7 +57,7 @@ public class PopulateArrayList {
         Collections.shuffle(list);
     }
 
-    public void populateDatabases(ArrayList<String[]> list) {
+    public void populateDb(ArrayList<String[]> list) {
     list.clear();
 
         list.add(new String[]{"Which language is used to query relational databases?", "SQL"});

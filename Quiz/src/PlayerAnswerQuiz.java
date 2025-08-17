@@ -3,61 +3,46 @@ import java.util.*;
 public class PlayerAnswerQuiz{
 
     public void quiz1(ArrayList<String[]> QuestionsList){
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in); // Dont close here because it breaks System.in and inputs, its closed in main
         PopulateArrayList pop = new PopulateArrayList();
-        QuizMenu QuizMenu = new QuizMenu();
+        QuizLogic QuizLogic = new QuizLogic();
 
-        QuizMenu.startQuiz();
+        QuizLogic.startQuiz();
            
         int selection = scan.nextInt();
         scan.nextLine();
 
-        String input = "";
         int correctCount = 0;
 
         switch (selection) {
         case 1:
             pop.populateAlgo1(QuestionsList);
 
-            QuizMenu.warnQuiz(correctCount);
+            QuizLogic.warnQuiz();
 
-            for(int i = 0; i < 10; i++){
-                System.out.println(QuestionsList.get(i)[0]);
-                System.out.print("Please type your answer here: ");
-                input = scan.nextLine();
-                        
-                if (QuestionsList.get(i)[1].equalsIgnoreCase(input)){
-                    System.out.println("********************* Well done! ************************");
-                       correctCount++;
-                    } else {
-                    System.out.println("******** Incorrect. The correct answer was: " + QuestionsList.get(i)[1] + "*********");
-                }
-            }
-            QuizMenu.endQuiz(correctCount);
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 2:
-            pop.populateAlgo1(QuestionsList);
+            pop.populateAlgo2(QuestionsList);
 
-            QuizMenu.warnQuiz(correctCount);
+            QuizLogic.warnQuiz();
 
-            for(int i = 0; i < 10; i++){
-                System.out.println(QuestionsList.get(i)[0]);
-                System.out.print("Please type your answer here: ");
-                input = scan.nextLine();
-                        
-                if (QuestionsList.get(i)[1].equalsIgnoreCase(input)){
-                    System.out.println("********************* Well done! ************************");
-                       correctCount++;
-                    } else {
-                    System.out.println("******** Incorrect. The correct answer was: " + QuestionsList.get(i)[1] + "*********");
-                }
-            }
-            QuizMenu.endQuiz(correctCount);
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 3:
-            //pop.populate(QuestionsList, selection);
+            pop.populateDb(QuestionsList);
+
+            QuizLogic.warnQuiz();
+
+            correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+            QuizLogic.endQuiz(correctCount);
         break;
 
         case 4:
@@ -92,7 +77,5 @@ public class PlayerAnswerQuiz{
             System.out.println("Invalid choice");
         break;
         }
-
-        scan.close();
     }
 } 
