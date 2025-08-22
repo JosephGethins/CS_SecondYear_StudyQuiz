@@ -13,6 +13,7 @@ public class PlayerAnswerQuiz{
         scan.nextLine();
 
         int correctCount = 0;
+        int size;
 
         switch (selection) {
         case 1:
@@ -21,9 +22,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 2:
@@ -32,9 +34,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 3:
@@ -43,9 +46,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 4:
@@ -54,9 +58,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 5:
@@ -65,9 +70,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 6:
@@ -76,9 +82,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 7:
@@ -87,9 +94,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 8:
@@ -98,9 +106,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 9:
@@ -109,9 +118,10 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
 
         case 10:
@@ -120,14 +130,42 @@ public class PlayerAnswerQuiz{
 
             QuizLogic.warnQuiz();
 
+            size = QuestionsList.size();
             correctCount = QuizLogic.playerAnswer(QuestionsList); 
 
-            QuizLogic.endQuiz(correctCount);
+            QuizLogic.endQuiz(correctCount, size);
         break;
         
         default:
             System.out.println("Invalid choice");
         break;
         }
+    }
+
+     public void quiz2(ArrayList<String[]> QuestionsList){
+        PopulateArrayList pop = new PopulateArrayList();
+        QuizLogic QuizLogic = new QuizLogic();
+
+        pop.populateAlgo1(QuestionsList);
+        pop.populateAlgo2(QuestionsList);
+        pop.populateCompArch(QuestionsList);
+        pop.populateDb(QuestionsList);
+        pop.populateOS(QuestionsList);
+        pop.populateSoftEngProcess(QuestionsList);
+        pop.populateSoftTest(QuestionsList);
+        pop.populateUXUI(QuestionsList);
+        pop.populateWebInfoProcessing(QuestionsList);
+        pop.populateTheoryOfComp(QuestionsList);
+
+        QuizLogic.startQuiz();
+        QuizLogic.warnQuiz();
+
+        int correctCount = 0;
+        int size = QuestionsList.size();
+
+        correctCount = QuizLogic.playerAnswer(QuestionsList); 
+
+        QuizLogic.endQuiz(correctCount, size);
+
     }
 } 

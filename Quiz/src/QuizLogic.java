@@ -21,8 +21,15 @@ public class QuizLogic{
         System.out.println("*********************************************************");
     }
 
-    public void endQuiz(int correctCount){
-        System.out.println("This quiz has ended! In total you got: " + correctCount + " correct!");
+    public void warnQuiz(){
+        System.out.println("*********************************************************");
+        System.out.println("* Remember!!! Correct spelling and full answers matter! *");
+        System.out.println("******* and n squared can be entered as n^2! ************");
+        System.out.println("*********************************************************");
+    }
+
+    public void endQuiz(int correctCount, int size){
+        System.out.println("This quiz has ended! In total you got: " + correctCount + "out of " + size + " correct!");
         System.out.println("*********************************************************");
         System.out.println("****** Would you like to go back to the main menu?*******");
         System.out.println("*********************************************************");
@@ -38,27 +45,24 @@ public class QuizLogic{
         }
     }
 
-    public void warnQuiz(){
-        System.out.println("*********************************************************");
-        System.out.println("* Remember!!! Correct spelling and full answers matter! *");
-        System.out.println("******* and n squared can be entered as n^2! ************");
-        System.out.println("*********************************************************");
-    }
-
     public int playerAnswer(ArrayList<String[]> QuestionsList){
         int correctCount = 0;
         String input = "";
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < QuestionsList.size(); i++){
             System.out.println(QuestionsList.get(i)[0]);
             System.out.print("Please type your answer here: ");
             input = scan.nextLine();
                         
             if (QuestionsList.get(i)[1].equalsIgnoreCase(input)){
-            System.out.println("********************* Well done! ************************");
+                System.out.println();
+                System.out.println("********************* Well done! ************************");
+                System.out.println();
                 correctCount++;
             } else {
-            System.out.println("******** Incorrect. The correct answer was: " + QuestionsList.get(i)[1] + "*********");
+                System.out.println();
+                System.out.println("******** Incorrect. The correct answer was: " + QuestionsList.get(i)[1] + " *********");
+                System.out.println();
             }
         }
         return correctCount;

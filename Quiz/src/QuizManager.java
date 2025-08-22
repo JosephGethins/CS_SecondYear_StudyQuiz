@@ -25,7 +25,7 @@ public class QuizManager {
 
         switch (MenuSelection) {
             case 1 -> playerChoice.quiz1(QuestionsList);
-            case 2 -> System.out.println("Random quiz coming soon...");
+            case 2 -> playerChoice.quiz2(QuestionsList);
             default -> System.out.println("Invalid choice!");
         }
         
