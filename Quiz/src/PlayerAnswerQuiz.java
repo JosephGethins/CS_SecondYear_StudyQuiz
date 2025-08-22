@@ -157,6 +157,8 @@ public class PlayerAnswerQuiz{
         pop.populateWebInfoProcessing(QuestionsList);
         pop.populateTheoryOfComp(QuestionsList);
 
+        Collections.shuffle(QuestionsList);
+
         QuizLogic.startQuiz();
         QuizLogic.warnQuiz();
 
