@@ -29,16 +29,16 @@ public class QuizLogic{
     }
 
     public void endQuiz(int correctCount, int size){
-        System.out.println("This quiz has ended! In total you got: " + correctCount + "out of " + size + " correct!");
+        System.out.println("This quiz has ended! In total you got: " + correctCount + " out of " + size + " correct!");
         System.out.println("*********************************************************");
-        System.out.println("****** Would you like to go back to the main menu?*******");
+        System.out.println("****** Would you like to go back to the main menu? ******");
         System.out.println("*********************************************************");
         System.out.println("");
         System.out.print("Answer here! (y / n): ");
         String input = scan.nextLine();
 
         if(input.equalsIgnoreCase("y")){
-            quizManage.quizManage();
+            quizManage.mainMenu();
         } else {
             System.out.println("Goodbye!");
             System.exit(0); 
@@ -59,7 +59,13 @@ public class QuizLogic{
                 System.out.println("********************* Well done! ************************");
                 System.out.println();
                 correctCount++;
-            } else {
+            } 
+
+            if (input.equalsIgnoreCase("menu")) {
+                quizManage.mainMenu();
+            }
+            
+            else {
                 System.out.println();
                 System.out.println("******** Incorrect. The correct answer was: " + QuestionsList.get(i)[1] + " *********");
                 System.out.println();

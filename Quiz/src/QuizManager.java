@@ -5,10 +5,10 @@ public class QuizManager {
     public static void main(String[] args) {
         // putting a basic entry point here for now, may change
         QuizManager manager = new QuizManager();
-        manager.quizManage();
+        manager.mainMenu();
     }
 
-    public void quizManage() {
+    public void mainMenu() {
         Scanner scan = new Scanner(System.in);
 
         ArrayList<String[]> QuestionsList = new ArrayList<>();
